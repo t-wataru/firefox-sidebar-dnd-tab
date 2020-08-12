@@ -1,3 +1,3 @@
 # firefox-sidebar-dnd-tab 
-test dnd tab into sidebar on firefox
+test dnd tab into sidebar on firefox 
 WIP
