@@ -39,9 +39,9 @@
     "commands": {
         "_execute_sidebar_action": {
             "suggested_key": {
-                "default": "Ctrl+Alt+S"
+                "default": "Ctrl+Alt+T"
             },
-            "description": "Toggle the Scrapbox sidebar"
+            "description": "Toggle the test sidebar"
         }
     }
 }
