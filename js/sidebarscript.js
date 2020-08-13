@@ -1,6 +1,6 @@
 console.log("open panel");
 const dropEvent = function (event) {
-    browser.runtime.sendMessage({ closeMe: true });
+    console.log(event);
 };
 document.addEventListener('dragstart', dropEvent);
 document.addEventListener('dragover', dropEvent);
