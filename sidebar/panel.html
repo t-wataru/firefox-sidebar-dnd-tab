@@ -12,7 +12,7 @@
         const dropEvent = function (event) {
             browser.runtime.sendMessage({ closeMe: true });
         };
-        document.addEventListener('dragstart', dropEvent); // eslint-disable-line no-use-before-define
+        document.addEventListener('dragstart', dropEvent);
         document.addEventListener('dragover', dropEvent);
         document.addEventListener('dragenter', dropEvent);
         document.addEventListener('dragleave', dropEvent);
