@@ -1,6 +1,8 @@
 console.log("open panel");
 const dropEvent = function (event) {
     console.log(event);
+    console.log(event.dataTransfer.types[0]);
+    console.log(event.dataTransfer.types[1]);
 };
 document.addEventListener('dragstart', dropEvent);
 document.addEventListener('dragover', dropEvent);
