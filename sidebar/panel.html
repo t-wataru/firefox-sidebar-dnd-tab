@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <!-- <meta http-equiv="refresh" content="0; url=https://scrapbox.io/"> -->
-    </head>
-    <body>
-        <div>test</div>
-        <script>
-            const dropEvent = function(event) {
+
+<head>
+    <!-- <meta http-equiv="refresh" content="0; url=https://scrapbox.io/"> -->
+</head>
+
+<body>
+    <div>test</div>
+    <script>
+        const dropEvent = function (event) {
+            browser.runtime.sendMessage({ closeMe: true });
+        };
+        document.addEventListener('dragstart', dropEvent); // eslint-disable-line no-use-before-define
+        document.addEventListener('dragover', dropEvent);
+        document.addEventListener('dragenter', dropEvent);
+        document.addEventListener('dragleave', dropEvent);
+        document.addEventListener('dragend', dropEvent);
+        document.addEventListener('drop', dropEvent);
+        window.addEventListener('mouseup', event => {
+            let isRightButtonUp = event.button == 2
+            if (isRightButtonUp && closingTab) {
                 browser.runtime.sendMessage({ closeMe: true });
-            };
-            document.addEventListener('dragstart', dropEvent); // eslint-disable-line no-use-before-define
-            document.addEventListener('dragover', dropEvent);
-            document.addEventListener('dragenter', dropEvent);
-            document.addEventListener('dragleave', dropEvent);
-            document.addEventListener('dragend', dropEvent);
-            document.addEventListener('drop', dropEvent);
-            window.addEventListener('mouseup', event=>{
-                let isRightButtonUp = event.button == 2
-                if (isRightButtonUp && closingTab) {
-                    browser.runtime.sendMessage({ closeMe: true });
-                }
-            });
-        </script>
-    </body>
+            }
+        });
+    </script>
+</body>
+
 </html>
