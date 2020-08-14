@@ -2,17 +2,13 @@ console.log("open panel");
 const dropEvent = function (event) {
     console.log(event);
     console.log(event.dataTransfer.types[0]);
-    console.log(event.dataTransfer.types[1]);
+    console.log(event.dataTransfer.dropEffect);
 };
-document.addEventListener('dragstart', dropEvent);
-document.addEventListener('dragover', dropEvent);
-document.addEventListener('dragenter', dropEvent);
-document.addEventListener('dragleave', dropEvent);
-document.addEventListener('dragend', dropEvent);
-document.addEventListener('drop', dropEvent);
-window.addEventListener('mouseup', event => {
-    let isRightButtonUp = event.button == 2
-    if (isRightButtonUp && closingTab) {
-        browser.runtime.sendMessage({ closeMe: true });
-    }
-});
+const div = document.querySelector("div");
+console.log(div);
+div.addEventListener('dragstart', dropEvent);
+div.addEventListener('dragover', dropEvent);
+div.addEventListener('dragenter', dropEvent);
+div.addEventListener('dragleave', dropEvent);
+div.addEventListener('dragend', dropEvent);
+div.addEventListener('drop', dropEvent);
